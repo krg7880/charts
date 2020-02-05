@@ -9,6 +9,7 @@ keywords:
 home: https://traefik.io/
 sources:
   - https://github.com/containous/traefik
+  - https://github.com/krg7880/charts
 maintainers:
   - name: emilevauge
     email: emile@vauge.com
