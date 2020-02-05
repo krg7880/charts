@@ -32,3 +32,9 @@ To add a public repo, run the following command:
 ```
 helm repo add <repo_name> https://raw.githubusercontent.com/<your_org>/charts/master/
 ```
+
+## Searching For Chars
+
+```
+helm search repo <chart>
+```
