@@ -17,6 +17,7 @@ spec:
     {{- range . }}
     - {{ . | quote }}
     {{- end }}
+    {{- end }}
   routes:
   - match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
     kind: Rule
