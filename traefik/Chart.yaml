@@ -1,0 +1,22 @@
+apiVersion: v1
+name: traefik
+version: 3.3.1
+appVersion: 2.1.1
+description: A Traefik based Kubernetes ingress controller
+keywords:
+  - traefik
+  - ingress
+home: https://traefik.io/
+sources:
+  - https://github.com/containous/traefik
+maintainers:
+  - name: emilevauge
+    email: emile@vauge.com
+  - name: dtomcej
+    email: daniel.tomcej@gmail.com
+  - name: ldez
+    email: ludovic@containo.us
+  - name: krg7880
+    email: kirk7880@gmail.com
+engine: gotpl
+icon: http://traefik.io/traefik.logo.png
