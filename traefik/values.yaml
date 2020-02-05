@@ -79,6 +79,8 @@ dashboard:
   # deployments
   ingressRoute: false
 
+  entryPoints: []
+
 logs:
   loglevel: WARN
 #
