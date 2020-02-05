@@ -13,7 +13,10 @@ metadata:
     heritage: {{ .Release.Service | quote }}
 spec:
   entryPoints:
-    - web
+    {{- with .Values.dashboard.entryPoints }}
+    {{- range . }}
+    - {{ . | quote }}
+    {{- end }}
   routes:
   - match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
     kind: Rule
