@@ -3,7 +3,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: {{ template "traefik.fullname" . }}-dashboard
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ .Values.namespace }}
   annotations:
     helm.sh/hook: "post-install"
   labels:
@@ -20,5 +20,5 @@ spec:
     services:
     - name: api@internal
       kind: TraefikService
-      namespace: {{ .Release.Namespace }}
+      namespace: {{ .Values.namespace }}
 {{- end -}}
