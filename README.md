@@ -7,11 +7,11 @@ Public Helm chart repo
 Follow the steps below to add a new chart to the repo
 
 1. `git clone https://github.com/krg7880/charts.git`
-2. `helm create <chart_name>`
-3. `helm package <chart_name>`
-4. `helm repo index .`
-5. `git add <chart_name>`
-6. `git commit index.yaml <chart_name> -m "<your commit message>"`
+2. `helm create <chart_name>` - Create a new chart
+3. `helm package <chart_name>` - Package up the chart as a \*.tgz tarball
+4. `helm repo index .` - Generate or update an existing index.yaml
+5. `git add .` - Add the index.yaml and the .tgz tarball
+6. `git commit -m "<your commit message>"` - Commit your changes
 
 ## Adding The Chart Repo
 
