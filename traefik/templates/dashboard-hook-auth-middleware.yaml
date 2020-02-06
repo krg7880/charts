@@ -1,0 +1,22 @@
+---
+{{- if or (.Values.dashboard.auth.basicAuth.enabled)  (.Values.dashboard.auth.forwardAuth.enabled) }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: auth
+  namespace: {{ .Values.namespace }}
+spec:
+  {{- if or (.Values.dashboard.auth.basicAuth.secret) (.Values.dashboard.auth.headerField) (.Values.dashboard.auth.realm) }}
+  basicAuth:
+    {{- if  .Values.dashboard.auth.basicAuth.secret }}
+    secret: {{ .Values.dashboard.auth.basicAuth.secret }}
+    {{ else if .Values.dashboard.auth.basicAuth.headerField }}
+    headerField: {{ .Values.dashboard.auth.basicAuth.headerField }}
+    {{ else if .Values.dashboard.auth.basicAuth.realm }}
+    realm: {{ .Values.dashboard.auth.basicAuth.realm }}
+    {{- end }}
+  {{ else if .Values.dashboard.auth.forwardAuth.address }}
+  forwardAuth:
+    address: {{ .Values.dashboard.auth.forwardAuth.address }}
+  {{- end }}
+{{- end -}}
