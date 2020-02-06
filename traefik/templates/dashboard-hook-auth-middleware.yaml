@@ -3,7 +3,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: auth
+  name: dashboard-auth-middleware
   namespace: {{ .Values.namespace }}
 spec:
   {{- if or (.Values.dashboard.auth.basicAuth.secret.name) (.Values.dashboard.auth.headerField) (.Values.dashboard.auth.realm) }}

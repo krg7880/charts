@@ -21,6 +21,10 @@ spec:
   routes:
   - match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
     kind: Rule
+    middlewares:
+      {{ if .Values.dashboard.auth.enabled }}
+      - name: dashboard-auth-middleware
+      {{- end }}
     services:
     - name: api@internal
       kind: TraefikService
