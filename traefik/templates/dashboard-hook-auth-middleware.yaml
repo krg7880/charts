@@ -8,8 +8,8 @@ metadata:
 spec:
   {{- if or (.Values.dashboard.auth.basicAuth.secret) (.Values.dashboard.auth.headerField) (.Values.dashboard.auth.realm) }}
   basicAuth:
-    {{- if  .Values.dashboard.auth.basicAuth.secret }}
-    secret: {{ .Values.dashboard.auth.basicAuth.secret }}
+    {{- if  .Values.dashboard.auth.basicAuth.secret.name }}
+    secret: {{ .Values.dashboard.auth.basicAuth.secret.name }}
     {{ else if .Values.dashboard.auth.basicAuth.headerField }}
     headerField: {{ .Values.dashboard.auth.basicAuth.headerField }}
     {{ else if .Values.dashboard.auth.basicAuth.realm }}

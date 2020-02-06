@@ -85,7 +85,12 @@ dashboard:
     ## Either this forwardAuth, but not both!
     basicAuth:
       enabled: false
-      # secret: ''
+      secret: {}
+          # # name of secret that will house the admin users
+          # name: ''
+          # # list of admin users
+          # # htpasswd -nb user password | openssl base64
+          # users: ''
       # realm: ''
       # headerField: ''
 
