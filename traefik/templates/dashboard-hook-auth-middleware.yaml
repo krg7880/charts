@@ -6,7 +6,7 @@ metadata:
   name: dashboard-auth-middleware
   namespace: {{ .Values.namespace }}
 spec:
-  {{- if or (.Values.dashboard.auth.basicAuth.secret.name) (.Values.dashboard.auth.headerField) (.Values.dashboard.auth.realm) }}
+  {{- if or (or (.Values.dashboard.auth.basicAuth.secret.name) (.Values.dashboard.auth.headerField)) (.Values.dashboard.auth.realm) }}
   basicAuth:
     {{- if  .Values.dashboard.auth.basicAuth.secret.name }}
     secret: {{ .Values.dashboard.auth.basicAuth.secret.name }}
