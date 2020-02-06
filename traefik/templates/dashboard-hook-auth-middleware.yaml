@@ -6,7 +6,7 @@ metadata:
   name: auth
   namespace: {{ .Values.namespace }}
 spec:
-  {{- if or (.Values.dashboard.auth.basicAuth.secret) (.Values.dashboard.auth.headerField) (.Values.dashboard.auth.realm) }}
+  {{- if or (.Values.dashboard.auth.basicAuth.secret.name) (.Values.dashboard.auth.headerField) (.Values.dashboard.auth.realm) }}
   basicAuth:
     {{- if  .Values.dashboard.auth.basicAuth.secret.name }}
     secret: {{ .Values.dashboard.auth.basicAuth.secret.name }}
