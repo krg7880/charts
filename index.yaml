@@ -3,9 +3,9 @@ entries:
   traefik:
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2020-02-06T15:56:59.653167-05:00"
+    created: "2020-02-06T17:42:51.266628-05:00"
     description: A Traefik based Kubernetes ingress controller
-    digest: a263f319da6f3e4293bbbbd6f5d6c93e765e3390887e9723e9c220b9eaabc2dc
+    digest: 3850f4615f832821585e3b71fb788ce05657ffabb8053c9b071036fff85f2d5b
     home: https://traefik.io/
     icon: http://traefik.io/traefik.logo.png
     keywords:
@@ -31,7 +31,7 @@ entries:
   traefik-crds:
   - apiVersion: v2
     appVersion: 1.17.0
-    created: "2020-02-06T15:56:59.655011-05:00"
+    created: "2020-02-06T17:42:51.268793-05:00"
     description: Installs Traefik CRDs separately
     digest: 5a0c6ed58796e05d18e6b028a9813ea05b27aee294c183ce36a886d0ef45e92d
     name: traefik-crds
@@ -41,7 +41,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-02-06T15:56:59.654596-05:00"
+    created: "2020-02-06T17:42:51.267928-05:00"
     description: Installs Traefik CRDs separately
     digest: 5e51daa0b49270cd62a1b33f88d5f325c169759256459f495eae81ff5c559f5f
     name: traefik-crds
@@ -49,4 +49,4 @@ entries:
     urls:
     - traefik-crds-1.0.0.tgz
     version: 1.0.0
-generated: "2020-02-06T15:56:59.64843-05:00"
+generated: "2020-02-06T17:42:51.261438-05:00"
