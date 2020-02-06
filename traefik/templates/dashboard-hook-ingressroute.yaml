@@ -22,7 +22,7 @@ spec:
   - match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
     kind: Rule
     middlewares:
-      {{ if .Values.dashboard.auth.enabled }}
+      {{ if .Values.dashboard.auth.basicAuth.enabled }}
       - name: dashboard-auth-middleware
       {{- end }}
     services:
