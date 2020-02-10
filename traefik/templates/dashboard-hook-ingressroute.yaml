@@ -28,5 +28,4 @@ spec:
     services:
     - name: api@internal
       kind: TraefikService
-      # namespace: {{ .Release.Namespace }} # Not needed! Generates warnings...
 {{- end -}}
