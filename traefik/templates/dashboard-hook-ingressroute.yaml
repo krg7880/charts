@@ -19,7 +19,7 @@ spec:
     {{- end }}
     {{- end }}
   routes:
-  - match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
+  - match: PathPrefix(`/dashboard`)
     kind: Rule
     middlewares:
       {{ if .Values.dashboard.auth.basicAuth.enabled }}
