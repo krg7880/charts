@@ -11,19 +11,7 @@ entries:
     keywords:
     - traefik
     - ingress
-    maintainers:
-    - email: emile@vauge.com
-      name: emilevauge
-    - email: daniel.tomcej@gmail.com
-      name: dtomcej
-    - email: ludovic@containo.us
-      name: ldez
-    - email: kirk7880@gmail.com
-      name: krg7880
     name: traefik
-    sources:
-    - https://github.com/containous/traefik
-    - https://github.com/krg7880/charts
     type: application
     urls:
     - traefik-3.4.1.tgz
@@ -38,19 +26,7 @@ entries:
     keywords:
     - traefik
     - ingress
-    maintainers:
-    - email: emile@vauge.com
-      name: emilevauge
-    - email: daniel.tomcej@gmail.com
-      name: dtomcej
-    - email: ludovic@containo.us
-      name: ldez
-    - email: kirk7880@gmail.com
-      name: krg7880
     name: traefik
-    sources:
-    - https://github.com/containous/traefik
-    - https://github.com/krg7880/charts
     type: application
     urls:
     - traefik-3.3.1.tgz
