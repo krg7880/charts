@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: group-operator
+  name: {{ include "group-operator.fullname" . }}
+  labels:
+    {{- include "group-operator.labels" . | nindent 4 }}
 spec:
   replicas: 1
   strategy:
