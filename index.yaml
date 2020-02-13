@@ -3,7 +3,27 @@ entries:
   group-operator:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-02-13T12:38:10.221586-05:00"
+    created: "2020-02-13T12:46:02.209832-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 6c823a713e64a9d286fa830f8a2c67cfa05493180b71a49d9b0c2f8e56fd0530
+    keywords:
+    - iam
+    - aws
+    - operator
+    - rbac
+    maintainers:
+    - email: kirk7880@gmail.com
+      name: krg7880
+    name: group-operator
+    sources:
+    - https://github.com/krg7880/charts
+    type: application
+    urls:
+    - group-operator-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-02-13T12:46:02.209118-05:00"
     description: A Helm chart for Kubernetes
     digest: e9daf8afaba5edf8e4c8dd78da3583864287aa6cfa5f84fc88d31e363293806e
     keywords:
@@ -23,7 +43,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-02-13T12:38:10.221018-05:00"
+    created: "2020-02-13T12:46:02.206028-05:00"
     description: A Helm chart for Kubernetes
     digest: 0fedee24ea37fc7eb3acd6d908a16f4e03805f1d86d15169a0e209f0794cce87
     keywords:
@@ -43,7 +63,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-02-13T12:38:10.219363-05:00"
+    created: "2020-02-13T12:46:02.204792-05:00"
     description: A Helm chart for Kubernetes
     digest: 18b63740d9fdbedaf48f5b26920d9209afbc4fccc8c7fac552c89e43ff8ac71f
     keywords:
@@ -64,7 +84,7 @@ entries:
   traefik:
   - apiVersion: v2
     appVersion: 2.3.1
-    created: "2020-02-13T12:38:10.225264-05:00"
+    created: "2020-02-13T12:46:02.214966-05:00"
     description: A Traefik based Kubernetes ingress controller
     digest: 80c84dbfa606acd853a89ef597d787b36bae53800508343b71e80299508474ce
     home: https://traefik.io/
@@ -91,7 +111,7 @@ entries:
     version: 3.4.1
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2020-02-13T12:38:10.22334-05:00"
+    created: "2020-02-13T12:46:02.212037-05:00"
     description: A Traefik based Kubernetes ingress controller
     digest: 3850f4615f832821585e3b71fb788ce05657ffabb8053c9b071036fff85f2d5b
     home: https://traefik.io/
@@ -119,7 +139,7 @@ entries:
   traefik-crds:
   - apiVersion: v2
     appVersion: 1.17.0
-    created: "2020-02-13T12:38:10.226487-05:00"
+    created: "2020-02-13T12:46:02.216099-05:00"
     description: Installs Traefik CRDs separately
     digest: 5a0c6ed58796e05d18e6b028a9813ea05b27aee294c183ce36a886d0ef45e92d
     name: traefik-crds
@@ -129,7 +149,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-02-13T12:38:10.225917-05:00"
+    created: "2020-02-13T12:46:02.215527-05:00"
     description: Installs Traefik CRDs separately
     digest: 5e51daa0b49270cd62a1b33f88d5f325c169759256459f495eae81ff5c559f5f
     name: traefik-crds
@@ -137,4 +157,4 @@ entries:
     urls:
     - traefik-crds-1.0.0.tgz
     version: 1.0.0
-generated: "2020-02-13T12:38:10.217782-05:00"
+generated: "2020-02-13T12:46:02.20306-05:00"
