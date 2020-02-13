@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "group-operator.fullname" . }}
+  labels:
+    {{- include "group-operator.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      application: group-operator
+  template:
+    metadata:
+      labels:
+        application: group-operator
+    spec:
+      serviceAccountName: iamreader
+      containers:
+        - name: iamgroup-operator
+          image: jicowan/iamgroup-operator:v0.1

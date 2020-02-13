@@ -1,0 +1,17 @@
+apiVersion: v2
+name: group-operator
+description: A Helm chart for Kubernetes
+type: application
+version: 0.1.0
+appVersion: 1.16.0
+keywords:
+  - iam
+  - aws
+  - operator
+  - rbac
+sources:
+  - https://github.com/krg7880/charts
+maintainers:
+  - name: krg7880
+    email: kirk7880@gmail.com
+
