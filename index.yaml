@@ -3,10 +3,20 @@ entries:
   group-operator:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-02-13T12:19:45.946454-05:00"
+    created: "2020-02-13T12:23:53.730366-05:00"
     description: A Helm chart for Kubernetes
-    digest: 5ce543fc2965d082cd250fd26c82da4efb24cf6221a48751673bfa805b652dc2
+    digest: 0e7ce108a64bbee6a2b3fbf8da60dbdfb11bd0dc99298e7c34a57fab5e8bda81
+    keywords:
+    - iam
+    - aws
+    - operator
+    - rbac
+    maintainers:
+    - email: kirk7880@gmail.com
+      name: krg7880
     name: group-operator
+    sources:
+    - https://github.com/krg7880/charts
     type: application
     urls:
     - group-operator-0.1.0.tgz
@@ -14,7 +24,7 @@ entries:
   traefik:
   - apiVersion: v2
     appVersion: 2.3.1
-    created: "2020-02-13T12:19:45.95289-05:00"
+    created: "2020-02-13T12:23:53.7319-05:00"
     description: A Traefik based Kubernetes ingress controller
     digest: 80c84dbfa606acd853a89ef597d787b36bae53800508343b71e80299508474ce
     home: https://traefik.io/
@@ -41,7 +51,7 @@ entries:
     version: 3.4.1
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2020-02-13T12:19:45.950894-05:00"
+    created: "2020-02-13T12:23:53.731143-05:00"
     description: A Traefik based Kubernetes ingress controller
     digest: 3850f4615f832821585e3b71fb788ce05657ffabb8053c9b071036fff85f2d5b
     home: https://traefik.io/
@@ -69,7 +79,7 @@ entries:
   traefik-crds:
   - apiVersion: v2
     appVersion: 1.17.0
-    created: "2020-02-13T12:19:45.954455-05:00"
+    created: "2020-02-13T12:23:53.732347-05:00"
     description: Installs Traefik CRDs separately
     digest: 5a0c6ed58796e05d18e6b028a9813ea05b27aee294c183ce36a886d0ef45e92d
     name: traefik-crds
@@ -79,7 +89,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-02-13T12:19:45.953589-05:00"
+    created: "2020-02-13T12:23:53.732141-05:00"
     description: Installs Traefik CRDs separately
     digest: 5e51daa0b49270cd62a1b33f88d5f325c169759256459f495eae81ff5c559f5f
     name: traefik-crds
@@ -87,4 +97,4 @@ entries:
     urls:
     - traefik-crds-1.0.0.tgz
     version: 1.0.0
-generated: "2020-02-13T12:19:45.945685-05:00"
+generated: "2020-02-13T12:23:53.728926-05:00"
