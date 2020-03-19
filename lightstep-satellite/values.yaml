@@ -76,6 +76,7 @@ service:
   # enable admin endpoint (used for healthchecks)
   admin:
     enabled: true
+    port: 8180
 
   collector:
     #COLLECTOR_HTTP_PLAIN_PORT,  Unsecure traffic, or secure traffic that terminates it's secure status before it hits the satellite

@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args:  ['{{ include "lightstep-satellite.fullname" . }}:{{ .Values.service.port }}']
+      args:  ['{{ include "lightstep-satellite.fullname" . }}:{{ .Values.service.admin.port }}']
   restartPolicy: Never
