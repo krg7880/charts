@@ -20,14 +20,14 @@ spec:
     {{- end }}
 
     {{ if .Values.service.collector.insecure.enabled }}
-    - name: collectorInsecure
+    - name: insecure
       port: 8182
       protocol: TCP
       targetPort: 8182
     {{- end }}
 
     {{- if .Values.service.collector.secure.enabled }}
-    - name: collectorSecure
+    - name: secure
       port: 8183
       protocol: TCP
       targetPort: 8183
