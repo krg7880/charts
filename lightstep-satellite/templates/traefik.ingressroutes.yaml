@@ -1,0 +1,30 @@
+# Traefik Ingress Route
+{{- if (.Values.traefik.ingressRoute.enabled) -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ include "lightstep-satellite.fullname" . }}
+  labels:
+    {{- include "lightstep-satellite.labels" . | nindent 4 }}
+spec:
+  routes:
+    - kind: Rule
+      match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}`)
+      middlewares:
+        {{ if (.Values.traefik.ingressRoute.pathPrefix) }}
+        - name: "{{ include "lightstep-satellite.fullname" . }}-stripprefix"
+        {{- end }}
+      services:
+        - name: {{ include "lightstep-satellite.fullname" . }}
+          port: 8000
+
+        - name: {{ include "lightstep-satellite.fullname" . }}
+          port: {{ .Values.service.admin.port }}
+
+        - name: {{ include "lightstep-satellite.fullname" . }}
+          port: 8182
+
+        - name: {{ include "lightstep-satellite.fullname" . }}
+          port: 8183
+{{- end -}}
+

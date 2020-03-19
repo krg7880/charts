@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "lightstep-satellite.fullname" . }}
+  labels:
+    {{- include "lightstep-satellite.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: admin
+      port: {{ .Values.service.admin.port }}
+      protocol: TCP
+      targetPort: {{ .Values.service.admin.port }}
+
+    {{ if .Values.service.diagnostics.enabled }}
+    - name: diagnostics
+      port: 8000
+      protocol: TCP
+      targetPort: 8000
+    {{- end }}
+
+    {{ if .Values.service.collector.insecure.enabled }}
+    - name: collectorInsecure
+      port: 8182
+      protocol: TCP
+      targetPort: 8182
+    {{- end }}
+
+    {{- if .Values.service.collector.secure.enabled }}
+    - name: collectorSecure
+      port: 8183
+      protocol: TCP
+      targetPort: 8183
+    {{- end }}
+  selector:
+    {{- include "lightstep-satellite.selectorLabels" . | nindent 4 }}

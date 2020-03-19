@@ -1,0 +1,104 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "lightstep-satellite.fullname" . }}
+  labels:
+    {{- include "lightstep-satellite.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "lightstep-satellite.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "lightstep-satellite.selectorLabels" . | nindent 8 }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      serviceAccountName: {{ include "lightstep-satellite.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+
+          env:
+            - name: COLLECTOR_SATELLITE_KEY
+              value: {{ .Values.lightstep.collector.key }}
+            - name: COLLECTOR_ADMIN_PLAIN_PORT
+              value: {{ .Values.service.admin.port }}
+
+            {{ if (.Values.service.diagnostics.enabled) }}
+            - name: COLLECTOR_DIAGNOSTIC_PORT
+              value: 8000
+            {{- end }}
+
+            {{ if .Values.service.collector.insecure.enabled }}
+            - name: COLLECTOR_HTTP_PLAIN_PORT
+              value: 8182
+            {{- end }}
+
+            {{ if .Values.service.collector.secure.enabled }}
+            - name: COLLECTOR_HTTP_SECURE_PORT
+              value: 8183
+            {{- end }}
+
+            - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT
+              value: {{ .Values.lightstep.collector.reporter.bytesPerProject }}
+
+          ports:
+            - name: admin
+              port: {{ .Values.service.admin.port }}
+              protocol: TCP
+              targetPort: {{ .Values.service.admin.port }}
+
+            {{ if .Values.service.diagnostics.enabled }}
+            - name: diagnostics
+              port: 8000
+              protocol: TCP
+              targetPort: 8000
+            {{- end }}
+
+            {{ if .Values.service.collector.insecure.enabled }}
+            - name: collectorInsecure
+              port: 8182
+              protocol: TCP
+              targetPort: 8182
+            {{- end }}
+
+            {{ if .Values.service.collector.secure.enabled }}
+            - name: collectorSecure
+              port: 8183
+              protocol: TCP
+              targetPort: 8183
+            {{- end }}
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: admin
+          readinessProbe:
+            httpGet:
+              path: /
+              port: admin
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}

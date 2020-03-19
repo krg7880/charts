@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "lightstep-satellite.fullname" . }}-test-connection"
+  labels:
+{{ include "lightstep-satellite.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args:  ['{{ include "lightstep-satellite.fullname" . }}:{{ .Values.service.admin.port }}']
+  restartPolicy: Never
