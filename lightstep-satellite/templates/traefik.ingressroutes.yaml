@@ -16,15 +16,21 @@ spec:
         {{- end }}
       services:
         - name: {{ include "lightstep-satellite.fullname" . }}
-          port: 8000
-
-        - name: {{ include "lightstep-satellite.fullname" . }}
           port: {{ .Values.service.admin.port }}
 
+        {{ if .Values.service.diagnostics.enabled }}
+        - name: {{ include "lightstep-satellite.fullname" . }}
+          port: 8000
+        {{- end }}
+
+        {{ if .Values.service.collector.insecure.enabled }}
         - name: {{ include "lightstep-satellite.fullname" . }}
           port: 8182
+        {{- end }}
 
+        {{- if .Values.service.collector.secure.enabled }}
         - name: {{ include "lightstep-satellite.fullname" . }}
           port: 8183
+        {{- end }}
 {{- end -}}
 
