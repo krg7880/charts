@@ -12,6 +12,12 @@ image:
 labels:
     stack: tracing
 
+lightstep:
+  collector:
+    key:
+    reporter:
+      bytesPerProjecT: 1000000000
+
 traefik:
   # @TODO - Deploy traefik as a part of this chart
   ingress:
@@ -57,6 +63,8 @@ securityContext: {}
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
+
+
 
 service:
   type: ClusterIP

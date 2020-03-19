@@ -31,7 +31,7 @@ spec:
 
           env:
             - name: COLLECTOR_SATELLITE_KEY
-              value: someLongRandomStringOfCharacaters
+              value: {{ .Values.lightstep.collector.key }}
             - name: COLLECTOR_ADMIN_PLAIN_PORT
               value: 8180
 
@@ -51,7 +51,7 @@ spec:
             {{- end }}
 
             - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT
-              value: 1000000000
+              value: {{ .Values.lightstep.collector.reporter.bytesPerProject }}
 
           ports:
             - name: admin
