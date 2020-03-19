@@ -53,33 +53,6 @@ spec:
             - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT
               value: {{ .Values.lightstep.collector.reporter.bytesPerProject }}
 
-          ports:
-            - name: admin
-              port: {{ .Values.service.admin.port }}
-              protocol: TCP
-              targetPort: {{ .Values.service.admin.port }}
-
-            {{ if .Values.service.diagnostics.enabled }}
-            - name: diagnostics
-              port: 8000
-              protocol: TCP
-              targetPort: 8000
-            {{- end }}
-
-            {{ if .Values.service.collector.insecure.enabled }}
-            - name: collectorInsecure
-              port: 8182
-              protocol: TCP
-              targetPort: 8182
-            {{- end }}
-
-            {{ if .Values.service.collector.secure.enabled }}
-            - name: collectorSecure
-              port: 8183
-              protocol: TCP
-              targetPort: 8183
-            {{- end }}
-
           livenessProbe:
             httpGet:
               path: /
