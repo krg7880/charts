@@ -51,7 +51,7 @@ spec:
             {{- end }}
 
             - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT
-              value: {{ .Values.lightstep.collector.reporter.bytesPerProject }}
+              value: "{{ .Values.lightstep.collector.reporter.bytesPerProject }}"
 
           livenessProbe:
             httpGet:
