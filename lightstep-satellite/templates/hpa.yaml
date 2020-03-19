@@ -2,7 +2,9 @@
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: tracing-lightstep-satellite-satellite
+  name: {{ include "lightstep-satellite.fullname" . }}
+  labels:
+    {{- include "lightstep-satellite.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
