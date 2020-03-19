@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: lightstep-satellite/collector
+  repository: lightstep/collector
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -16,7 +16,7 @@ lightstep:
   collector:
     key:
     reporter:
-      bytesPerProjecT: 1000000000
+      bytesPerProject: 1000000000
 
 traefik:
   # @TODO - Deploy traefik as a part of this chart
