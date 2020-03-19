@@ -1,6 +1,7 @@
----
+
 # Traefik Middleware
 # required for services that binds to `/` by default
+---
 {{- if (.Values.traefik.ingressRoute.enabled) -}}
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
