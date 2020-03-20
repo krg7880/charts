@@ -11,6 +11,7 @@ labels:
 
 lightstep:
   collector:
+    pool: ''
     key:
     reporter:
       bytesPerProject: "1000000000"

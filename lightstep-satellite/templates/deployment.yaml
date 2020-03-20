@@ -34,7 +34,12 @@ spec:
               value: "{{ .Values.lightstep.collector.key }}"
             - name: COLLECTOR_ADMIN_PLAIN_PORT
               value: "{{ .Values.service.admin.port | toString }}"
-
+            - name: COLLECTOR_POOL
+              value: "{{ .Values.lightstep.collector.pool | toString }}"
+            - name: COLLECTOR_GUID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
             {{ if (.Values.service.diagnostics.enabled) }}
             - name: COLLECTOR_DIAGNOSTIC_PORT
               value: "8000"

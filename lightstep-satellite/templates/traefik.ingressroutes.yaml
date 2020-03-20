@@ -8,16 +8,14 @@ metadata:
   labels:
     {{- include "lightstep-satellite.labels" . | nindent 4 }}
 spec:
-  entryPoints:
-    - web
-    - web-secure
   routes:
-    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}`)
+    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}`, `{{ .Values.traefik.ingressRoute.pathPrefix }}/api`)
       kind: Rule
-      middlewares:
-        {{ if (.Values.traefik.ingressRoute.pathPrefix) }}
-        - name: "{{ include "lightstep-satellite.fullname" . }}-stripprefix"
-        {{- end }}
+      # @TODO: only enable if path is not `/`
+      # middlewares:
+      #   {{ if (.Values.traefik.ingressRoute.pathPrefix) }}
+      #   - name: "{{ include "lightstep-satellite.fullname" . }}-stripprefix"
+      #   {{- end }}
       services:
         {{ if .Values.service.collector.insecure.enabled }}
         - name: {{ include "lightstep-satellite.fullname" . }}
