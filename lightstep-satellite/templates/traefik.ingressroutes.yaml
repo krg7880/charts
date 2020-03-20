@@ -9,8 +9,8 @@ metadata:
     {{- include "lightstep-satellite.labels" . | nindent 4 }}
 spec:
   routes:
-    - kind: Rule
-      match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}/collector`)
+    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}/collector`)
+      kind: Rule
       middlewares:
         {{ if (.Values.traefik.ingressRoute.pathPrefix) }}
         - name: "{{ include "lightstep-satellite.fullname" . }}-stripprefix"
@@ -24,9 +24,9 @@ spec:
         {{- if .Values.service.collector.secure.enabled }}
         - name: {{ include "lightstep-satellite.fullname" . }}
           port: 443
+          scheme: https
         {{- end }}
-    - kind: Rule
-      match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}/diagnostics`)
+    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}/diagnostics`)
       middlewares:
         {{ if (.Values.traefik.ingressRoute.pathPrefix) }}
         - name: "{{ include "lightstep-satellite.fullname" . }}-stripprefix"
@@ -36,8 +36,7 @@ spec:
         - name: {{ include "lightstep-satellite.fullname" . }}
           port: 8000
         {{- end }}
-    - kind: Rule
-      match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}/admin`)
+    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}/admin`)
       middlewares:
         - name: {{ include "lightstep-satellite.fullname" . }}
           port: {{ .Values.service.admin.port }}
