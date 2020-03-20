@@ -10,20 +10,12 @@ metadata:
 spec:
   routes:
     - kind: Rule
-      match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}`)
+      match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}/collector`)
       middlewares:
         {{ if (.Values.traefik.ingressRoute.pathPrefix) }}
         - name: "{{ include "lightstep-satellite.fullname" . }}-stripprefix"
         {{- end }}
       services:
-        # - name: {{ include "lightstep-satellite.fullname" . }}
-        #   port: {{ .Values.service.admin.port }}
-
-        # {{ if .Values.service.diagnostics.enabled }}
-        # - name: {{ include "lightstep-satellite.fullname" . }}
-        #   port: 8000
-        # {{- end }}
-
         {{ if .Values.service.collector.insecure.enabled }}
         - name: {{ include "lightstep-satellite.fullname" . }}
           port: 80
@@ -33,5 +25,23 @@ spec:
         - name: {{ include "lightstep-satellite.fullname" . }}
           port: 443
         {{- end }}
+    - kind: Rule
+      match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}/diagnostics`)
+      middlewares:
+        {{ if (.Values.traefik.ingressRoute.pathPrefix) }}
+        - name: "{{ include "lightstep-satellite.fullname" . }}-stripprefix"
+        {{- end }}
+      services:
+        {{ if .Values.service.diagnostics.enabled }}
+        - name: {{ include "lightstep-satellite.fullname" . }}
+          port: 8000
+        {{- end }}
+    - kind: Rule
+      match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}/admin`)
+      middlewares:
+        - name: {{ include "lightstep-satellite.fullname" . }}
+          port: {{ .Values.service.admin.port }}
+
+
 {{- end -}}
 

@@ -10,7 +10,8 @@ image:
   pullPolicy: IfNotPresent
 
 labels:
-    stack: tracing
+    common:
+      stack: tracing
 
 lightstep:
   collector:
