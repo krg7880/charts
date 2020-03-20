@@ -33,7 +33,7 @@ spec:
             - name: COLLECTOR_SATELLITE_KEY
               value: "{{ .Values.lightstep.collector.key }}"
             - name: COLLECTOR_ADMIN_PLAIN_PORT
-              value: {{ .Values.service.admin.port | toString }}
+              value: "{{ .Values.service.admin.port | toString }}"
 
             {{ if (.Values.service.diagnostics.enabled) }}
             - name: COLLECTOR_DIAGNOSTIC_PORT
@@ -51,17 +51,17 @@ spec:
             {{- end }}
 
             - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT
-              value: {{ .Values.lightstep.collector.reporter.bytesPerProject | toString }}
+              value: "{{ .Values.lightstep.collector.reporter.bytesPerProject | toString }}"
 
 
           livenessProbe:
             httpGet:
               path: /
-              port: admin
+              port: 8180
           readinessProbe:
             httpGet:
               path: /
-              port: admin
+              port: 8180
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
