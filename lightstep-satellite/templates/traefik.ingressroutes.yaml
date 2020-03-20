@@ -9,7 +9,7 @@ metadata:
     {{- include "lightstep-satellite.labels" . | nindent 4 }}
 spec:
   routes:
-    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}`, `{{ .Values.traefik.ingressRoute.pathPrefix }}/api`)
+    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}`, `{{ .Values.traefik.ingressRoute.pathPrefix }}api`)
       kind: Rule
       # @TODO: only enable if path is not `/`
       # middlewares:
