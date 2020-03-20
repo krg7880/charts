@@ -22,7 +22,7 @@ traefik:
     enabled: false
   ingressRoute:
     enabled: true
-    pathPrefix: /tracing-satellite
+    pathPrefix: /
 
 imagePullSecrets: []
 nameOverride: ""
