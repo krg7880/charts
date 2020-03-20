@@ -11,6 +11,7 @@ labels:
 
 lightstep:
   collector:
+    pool: 'updater-eks-live'
     key:
     reporter:
       bytesPerProject: "1000000000"
