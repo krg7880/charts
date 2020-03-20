@@ -9,13 +9,8 @@ metadata:
     {{- include "lightstep-satellite.labels" . | nindent 4 }}
 spec:
   routes:
-    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}`, `{{ .Values.traefik.ingressRoute.pathPrefix }}api/v2/reports`) # include /v2 to avoid conflict with traefik's /api endpoint
+    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}`)
       kind: Rule
-      # @TODO: only enable if path is not `/`
-      # middlewares:
-      #   {{ if (.Values.traefik.ingressRoute.pathPrefix) }}
-      #   - name: "{{ include "lightstep-satellite.fullname" . }}-stripprefix"
-      #   {{- end }}
       services:
         {{ if .Values.service.collector.insecure.enabled }}
         - name: {{ include "lightstep-satellite.fullname" . }}
@@ -27,27 +22,31 @@ spec:
           port: 443
           scheme: https
         {{- end }}
-    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}/diagnostics`)
+
+    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}api/v2`)
       kind: Rule
-      middlewares:
-        {{ if (.Values.traefik.ingressRoute.pathPrefix) }}
-        - name: "{{ include "lightstep-satellite.fullname" . }}-stripprefix"
+      services:
+        {{ if .Values.service.collector.insecure.enabled }}
+        - name: {{ include "lightstep-satellite.fullname" . }}
+          port: 80
         {{- end }}
+
+        {{- if .Values.service.collector.secure.enabled }}
+        - name: {{ include "lightstep-satellite.fullname" . }}
+          port: 443
+          scheme: https
+        {{- end }}
+    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}diagnostics`)
+      kind: Rule
       services:
         {{ if .Values.service.diagnostics.enabled }}
         - name: {{ include "lightstep-satellite.fullname" . }}
           port: 8000
         {{- end }}
-    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}/admin`)
+    - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}admin`)
       kind: Rule
-      middlewares:
-        {{ if (.Values.traefik.ingressRoute.pathPrefix) }}
-        - name: "{{ include "lightstep-satellite.fullname" . }}-stripprefix"
-        {{- end }}
       services:
         - name: {{ include "lightstep-satellite.fullname" . }}
           port: {{ .Values.service.admin.port }}
-
-
 {{- end -}}
 
