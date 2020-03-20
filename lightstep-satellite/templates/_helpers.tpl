@@ -41,6 +41,9 @@ helm.sh/chart: {{ include "lightstep-satellite.chart" . }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- if .Values.labels.common }}
+{{ .Values.labels.common | toYaml }}
+{{- end }}
 {{- end -}}
 
 {{/*
