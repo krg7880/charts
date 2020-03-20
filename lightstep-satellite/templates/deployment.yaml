@@ -50,6 +50,15 @@ spec:
               value: "8183"
             {{- end }}
 
+            - name: COLLECTOR_GRPC_PLAIN_PORT
+              value: "8184"
+            - name: COLLECTOR_GRPC_SECURE_PORT
+              value: "8185"
+            - name: COLLECTOR_PLAIN_PORT
+              value: "8186"
+            - name: COLLECTOR_SECURE_PORT
+              value: "8187"
+
             - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT
               value: "{{ .Values.lightstep.collector.reporter.bytesPerProject | toString }}"
 
