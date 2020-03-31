@@ -102,3 +102,7 @@ ingress:
 nodeSelector: {}
 tolerations: []
 affinity: {}
+
+
+podDisruptionBudget:
+  minAvailable: "1"
