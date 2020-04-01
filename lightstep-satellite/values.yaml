@@ -106,3 +106,5 @@ affinity: {}
 
 podDisruptionBudget:
   minAvailable: "1"
+
+priorityClassName: ""
