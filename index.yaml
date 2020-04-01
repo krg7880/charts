@@ -3,7 +3,7 @@ entries:
   group-operator:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.342128-04:00"
+    created: "2020-04-01T19:44:40.221301-04:00"
     description: A Helm chart for Kubernetes
     digest: 6c823a713e64a9d286fa830f8a2c67cfa05493180b71a49d9b0c2f8e56fd0530
     keywords:
@@ -23,7 +23,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.341103-04:00"
+    created: "2020-04-01T19:44:40.220258-04:00"
     description: A Helm chart for Kubernetes
     digest: e9daf8afaba5edf8e4c8dd78da3583864287aa6cfa5f84fc88d31e363293806e
     keywords:
@@ -43,7 +43,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.339789-04:00"
+    created: "2020-04-01T19:44:40.219322-04:00"
     description: A Helm chart for Kubernetes
     digest: 0fedee24ea37fc7eb3acd6d908a16f4e03805f1d86d15169a0e209f0794cce87
     keywords:
@@ -63,7 +63,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.338536-04:00"
+    created: "2020-04-01T19:44:40.217692-04:00"
     description: A Helm chart for Kubernetes
     digest: 18b63740d9fdbedaf48f5b26920d9209afbc4fccc8c7fac552c89e43ff8ac71f
     keywords:
@@ -84,7 +84,7 @@ entries:
   kubegraf:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.343317-04:00"
+    created: "2020-04-01T19:44:40.22427-04:00"
     description: Chart to deploy Grafana App for Kubernetes
     digest: e88a3e4709add4d1d6eabaac4510cf26529c5b6a781e7deac0f0c3469008ddc2
     name: kubegraf
@@ -94,7 +94,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.342748-04:00"
+    created: "2020-04-01T19:44:40.22337-04:00"
     description: Chart to deploy Grafana App for Kubernetes
     digest: e645e928440587fe196f533ca6e4ed33ff10cca84493fa3c0f4f8063c8e3750b
     name: kubegraf
@@ -105,7 +105,17 @@ entries:
   lightstep-satellite:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.355517-04:00"
+    created: "2020-04-01T19:44:40.239132-04:00"
+    description: A Helm chart deploying lightstep Satellite
+    digest: fbec34871a8babd2288649de6cce8241497b4fee3d7cc8ff185a55692ee9971f
+    name: lightstep-satellite
+    type: application
+    urls:
+    - lightstep-satellite-0.23.0.tgz
+    version: 0.23.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-04-01T19:44:40.238187-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: 952307bcb004c53bac34c588507ee74beb68023df0a51a594104ed7dd874d28c
     name: lightstep-satellite
@@ -115,7 +125,7 @@ entries:
     version: 0.22.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.354933-04:00"
+    created: "2020-04-01T19:44:40.23704-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: e70f2aeca75b5c9409568d234c0cbed9bc7bbf64fac83edb46f5c10647770ba5
     name: lightstep-satellite
@@ -125,7 +135,7 @@ entries:
     version: 0.20.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.353244-04:00"
+    created: "2020-04-01T19:44:40.235194-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: f6236b5922c7f54e240f261ce19726b7617b4e2cf1f8303f2532cc86cedd309c
     name: lightstep-satellite
@@ -135,7 +145,7 @@ entries:
     version: 0.19.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.352315-04:00"
+    created: "2020-04-01T19:44:40.234082-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: db34d680ee1eb5939c0961ee868802f8f9d19b2163dc1f0b45a6b0836af2a091
     name: lightstep-satellite
@@ -145,7 +155,7 @@ entries:
     version: 0.18.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.350394-04:00"
+    created: "2020-04-01T19:44:40.232315-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: 834c8f77683bc206d55af36e73633ed122c0deebcea66e250cd017e5f147491a
     name: lightstep-satellite
@@ -155,7 +165,7 @@ entries:
     version: 0.17.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.349437-04:00"
+    created: "2020-04-01T19:44:40.231245-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: d58c71d626780bd8ffdd0b3812226a403c02a72032fb5cc67ff768221053129b
     name: lightstep-satellite
@@ -165,7 +175,7 @@ entries:
     version: 0.14.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.348415-04:00"
+    created: "2020-04-01T19:44:40.229925-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: 5ede5d7aea353a63a7dddce9b2ed6dfd3b30585158bdde039ff9ed51774589c0
     name: lightstep-satellite
@@ -175,7 +185,7 @@ entries:
     version: 0.13.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.347484-04:00"
+    created: "2020-04-01T19:44:40.229005-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: 3b3fe6caa79bec31c1d3aa7733db1603601bd8a2202315c1dcb517ef24775f1c
     name: lightstep-satellite
@@ -185,7 +195,7 @@ entries:
     version: 0.12.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.346418-04:00"
+    created: "2020-04-01T19:44:40.227893-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: 00385b82fca64107b3b2f74930911ad0cc4248bdffde5ea431591fdfd949277f
     name: lightstep-satellite
@@ -195,7 +205,7 @@ entries:
     version: 0.11.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.345491-04:00"
+    created: "2020-04-01T19:44:40.226959-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: 41ca1800936013439841d0926cc7ac5939f920a413e9bb3f4c0e673283e0253a
     name: lightstep-satellite
@@ -205,7 +215,7 @@ entries:
     version: 0.10.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.363028-04:00"
+    created: "2020-04-01T19:44:40.246583-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: b756f909a4c5b9d449ebc967b9498773e3c00cb17cd29c55693d6dc32d57b54b
     name: lightstep-satellite
@@ -215,7 +225,7 @@ entries:
     version: 0.9.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.362021-04:00"
+    created: "2020-04-01T19:44:40.24561-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: e74ea43b8d6b80e2cfdbd3163879680b3930c743c78512166199a40137c2cdd4
     name: lightstep-satellite
@@ -225,7 +235,7 @@ entries:
     version: 0.8.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.360723-04:00"
+    created: "2020-04-01T19:44:40.243656-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: cebb63082e48066c8e89048892a3994248d865c09df54b89607dc8088bf1e8c4
     name: lightstep-satellite
@@ -235,7 +245,7 @@ entries:
     version: 0.7.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.359754-04:00"
+    created: "2020-04-01T19:44:40.242704-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: a52cfb1d325883dc7f162d856c2a88cf5ea25ae5c981bd5c69faee1fcdb52242
     name: lightstep-satellite
@@ -245,7 +255,7 @@ entries:
     version: 0.6.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.3588-04:00"
+    created: "2020-04-01T19:44:40.241807-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: 7afff4ef6ad89a40c85048adf6f4984a2c1e912cd316df4efe259ffc3553d9d2
     name: lightstep-satellite
@@ -255,7 +265,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.357663-04:00"
+    created: "2020-04-01T19:44:40.240874-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: b46b3a7e1ffd4d4092563c7b4b8e98209211feb3b7e4c4a7c12db2ac75a86938
     name: lightstep-satellite
@@ -265,7 +275,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.356591-04:00"
+    created: "2020-04-01T19:44:40.239998-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: 8f0419b805a9e5c86e1b0632f0046d1e9590005f49405e4e98863f49f1da305f
     name: lightstep-satellite
@@ -275,7 +285,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.354132-04:00"
+    created: "2020-04-01T19:44:40.236045-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: ccdd4f753f08beea012385bd2c05dc428d8d8a427b7bb1154fd091ae2a5e944a
     name: lightstep-satellite
@@ -285,7 +295,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.34453-04:00"
+    created: "2020-04-01T19:44:40.225965-04:00"
     description: A Helm chart deploying lightstep Satellite
     digest: 0f4e9805a862c37771338418003529b510883ad38f6b3d300ad25518cdc2a4e2
     name: lightstep-satellite
@@ -296,7 +306,7 @@ entries:
   traefik:
   - apiVersion: v2
     appVersion: 2.3.1
-    created: "2020-03-31T19:55:44.367888-04:00"
+    created: "2020-04-01T19:44:40.250835-04:00"
     description: A Traefik based Kubernetes ingress controller
     digest: 8a74cce6218ca7a6ec3672e0c17bb1cdafdb65f62b97de2ee6493ee99ef35ffd
     name: traefik
@@ -306,7 +316,7 @@ entries:
     version: 3.4.2
   - apiVersion: v2
     appVersion: 2.3.1
-    created: "2020-03-31T19:55:44.36617-04:00"
+    created: "2020-04-01T19:44:40.249555-04:00"
     description: A Traefik based Kubernetes ingress controller
     digest: 80c84dbfa606acd853a89ef597d787b36bae53800508343b71e80299508474ce
     home: https://traefik.io/
@@ -333,7 +343,7 @@ entries:
     version: 3.4.1
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2020-03-31T19:55:44.36476-04:00"
+    created: "2020-04-01T19:44:40.24808-04:00"
     description: A Traefik based Kubernetes ingress controller
     digest: 3850f4615f832821585e3b71fb788ce05657ffabb8053c9b071036fff85f2d5b
     home: https://traefik.io/
@@ -361,7 +371,7 @@ entries:
   traefik-crds:
   - apiVersion: v2
     appVersion: 1.17.0
-    created: "2020-03-31T19:55:44.369384-04:00"
+    created: "2020-04-01T19:44:40.252471-04:00"
     description: Installs Traefik CRDs separately
     digest: 5a0c6ed58796e05d18e6b028a9813ea05b27aee294c183ce36a886d0ef45e92d
     name: traefik-crds
@@ -371,7 +381,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-03-31T19:55:44.368723-04:00"
+    created: "2020-04-01T19:44:40.251659-04:00"
     description: Installs Traefik CRDs separately
     digest: 5e51daa0b49270cd62a1b33f88d5f325c169759256459f495eae81ff5c559f5f
     name: traefik-crds
@@ -379,4 +389,4 @@ entries:
     urls:
     - traefik-crds-1.0.0.tgz
     version: 1.0.0
-generated: "2020-03-31T19:55:44.335049-04:00"
+generated: "2020-04-01T19:44:40.212745-04:00"
