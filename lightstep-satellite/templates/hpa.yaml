@@ -15,6 +15,7 @@ spec:
   {{- with .Values.hpa.behavior }}
   behavior:
     {{- toYaml . | nindent 4 }}
+  {{- end }}
   metrics:
     - type: Resource
       resource:
