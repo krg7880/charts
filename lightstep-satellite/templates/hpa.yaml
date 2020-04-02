@@ -26,5 +26,7 @@ spec:
     - type: Resource
       resource:
         name: memory
-        targetAverageValue: {{ .Values.hpa.memory.targetAverageValue }} # 100Mi
+        target:
+          type: Utilization
+          averageValue: {{ .Values.hpa.memory.targetAverageValue }} # 100Mi
 {{- end -}}
