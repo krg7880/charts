@@ -23,6 +23,9 @@ traefik:
   ingressRoute:
     enabled: true
     pathPrefix: /
+  middlewares:
+    retry:
+      attempts: 0
 
 imagePullSecrets: []
 nameOverride: ""

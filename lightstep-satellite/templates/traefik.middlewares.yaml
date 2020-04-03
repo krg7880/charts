@@ -12,3 +12,14 @@ spec:
     prefixes:
       - {{ .Values.traefik.ingressRoute.pathPrefix }}
 {{- end -}}
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: "{{ include "lightstep-satellite.fullname" . }}-retry"
+  labels:
+    {{- include "lightstep-satellite.labels" . | nindent 4 }}
+spec:
+  retry:
+    attempts: {{ .Values.traefik.middlewares.retry.attempts }}
