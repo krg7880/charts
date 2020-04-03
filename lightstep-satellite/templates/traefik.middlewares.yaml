@@ -13,6 +13,7 @@ spec:
       - {{ .Values.traefik.ingressRoute.pathPrefix }}
 {{- end -}}
 
+# retry middleware
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
