@@ -2,7 +2,7 @@
 # Traefik Middleware
 # required for services that binds to `/` by default
 ---
-{{- if (.Values.traefik.ingressRoute.enabled) }}
+{{- if (.Values.traefik.ingressRoute.enabled) -}}
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
@@ -11,7 +11,10 @@ spec:
   stripPrefix:
     prefixes:
       - "{{ .Values.traefik.ingressRoute.pathPrefix }}"
-{{- end }}
+{{- end -}}
+
+
+{{printf "\n" }} # add a new line
 
 # retry middleware
 ---
