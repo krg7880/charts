@@ -11,6 +11,8 @@ spec:
   routes:
     - match: PathPrefix(`{{ .Values.traefik.ingressRoute.pathPrefix }}`)
       kind: Rule
+      middlewares:
+        - name: "{{ include "lightstep-satellite.fullname" . }}-retry"
       services:
         {{ if .Values.service.collector.insecure.enabled }}
         - name: {{ include "lightstep-satellite.fullname" . }}
