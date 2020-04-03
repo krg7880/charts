@@ -10,7 +10,7 @@ metadata:
 spec:
   stripPrefix:
     prefixes:
-      - {{ .Values.traefik.ingressRoute.pathPrefix }}
+      - "{{ .Values.traefik.ingressRoute.pathPrefix }}"
 {{- end -}}
 
 # retry middleware
