@@ -133,12 +133,14 @@ podDisruptionBudget:
 
 priorityClassName: ""
 
+# default is to kill the container if it's not alive after 30s
 livenessProbe:
-  initialDelaySeconds: 3
-  failureThreshold: 3
-  periodSeconds: 10
+  initialDelaySeconds: 1
+  failureThreshold: 6 # failureThreshold * periodSeconds = killTime
+  periodSeconds: 5
 
+# default is to kill the container if it's not ready after 15s
 readinessProbe:
-  initialDelaySeconds: 3
-  failureThreshold: 3
+  initialDelaySeconds: 1
+  failureThreshold: 3 # failureThreshold * periodSeconds = killTime
   periodSeconds: 5
