@@ -133,3 +133,12 @@ podDisruptionBudget:
 
 priorityClassName: ""
 
+livenessProbe:
+  initialDelaySeconds: 3
+  failureThreshold: 3
+  periodSeconds: 10
+
+readinessProbe:
+  initialDelaySeconds: 3
+  failureThreshold: 3
+  periodSeconds: 5
