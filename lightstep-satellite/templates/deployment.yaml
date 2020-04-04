@@ -71,17 +71,17 @@ spec:
           livenessProbe:
             httpGet:
               path: /
-              port: 8180 # check if the app is alive
-            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
-            failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
-            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+              port: 8182 # check if the app is alive
+            # initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            # failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
+            # periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
           readinessProbe:
             httpGet:
               path: /
-              port: 8180
-            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
-            failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
-            periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+              port: 8182
+            # initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+            # failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
+            # periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
