@@ -45,6 +45,20 @@ hpa:
   minReplicas: 1
   maxReplicas: 1
 
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 80
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 75
+
   # PR #18965 reverts the previous pull request since the behavior object is functionality targeted in 1.18, not 1.17.
   # behavior:
   #   scaleDown:
