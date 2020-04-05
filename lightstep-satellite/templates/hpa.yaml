@@ -18,7 +18,7 @@ spec:
   #   {{- toYaml . | nindent 4 }}
   # {{- end }}
   {{- with .Values.hpa.metrics }}
-  behavior:
+  metrics:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 {{- end -}}
