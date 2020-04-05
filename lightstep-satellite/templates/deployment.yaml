@@ -30,6 +30,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
 
+          terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds | default 30 }}
+
           env:
             - name: COLLECTOR_SATELLITE_KEY
               value: "{{ .Values.lightstep.collector.key }}"
@@ -68,20 +70,10 @@ spec:
             - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT
               value: "{{ .Values.lightstep.collector.reporter.bytesPerProject | toString }}"
 
+          {{- with .Values.livenessProbe }}
           livenessProbe:
-            httpGet:
-              path: /
-              port: 8182 # check if the app is alive
-            # initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
-            # failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
-            # periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8182
-            # initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
-            # failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
-            # periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
