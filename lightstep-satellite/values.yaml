@@ -146,33 +146,21 @@ podDisruptionBudget:
 
 priorityClassName: ""
 
-# default is to kill the container if it's not alive after 30s
-livenessProbe:
-  initialDelaySeconds: 1
-  failureThreshold: 6 # failureThreshold * periodSeconds = killTime
-  periodSeconds: 5
-
-# default is to kill the container if it's not ready after 15s
-readinessProbe:
-  initialDelaySeconds: 1
-  failureThreshold: 3 # failureThreshold * periodSeconds = killTime
-  periodSeconds: 5
-
 terminationGracePeriodSeconds: 30
 
 # kubernetes defaults
 livenessProbe:
-  failureThreshold: 6
   httpGet:
     path: /
     port: 8180
     scheme: HTTP
   initialDelaySeconds: 1
   periodSeconds: 5
-  successThreshold: 3
+  failureThreshold: 3 # failureThreshold * periodSeconds = killTime
+  successThreshold: 1
   timeoutSeconds: 1
 readinessProbe:
-  failureThreshold: 3
+  failureThreshold: 3 # failureThreshold * periodSeconds = killTime
   httpGet:
     path: /
     port: 8180
